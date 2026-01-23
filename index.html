@@ -10,17 +10,20 @@
       margin: 0;
       font-family: "Segoe UI", Arial, Helvetica, sans-serif;
       color: #2e2e2e;
+
+      /* FUN BACKGROUND IMAGE */
       background:
-        radial-gradient(
-          circle at top left,
-          rgba(190, 160, 255, 0.35),
-          rgba(255, 255, 255, 0.9) 45%
+        linear-gradient(
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0.75)
         ),
-        radial-gradient(
-          circle at bottom right,
-          rgba(160, 120, 255, 0.35),
-          rgba(255, 255, 255, 0.9) 50%
-        );
+        url("fun-background.png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
       min-height: 100vh;
     }
 
@@ -28,8 +31,8 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(8px);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
@@ -81,12 +84,12 @@
     }
 
     .hero {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(6px);
-      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
       padding: 56px;
       box-shadow:
-        0 20px 40px rgba(120, 90, 200, 0.15),
+        0 24px 48px rgba(120, 90, 200, 0.25),
         0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
@@ -113,17 +116,16 @@
     .btn {
       display: inline-block;
       text-decoration: none;
-      background: rgba(107, 92, 168, 0.12);
+      background: rgba(107, 92, 168, 0.15);
       color: #4b3c82;
-      border: 1px solid rgba(107, 92, 168, 0.25);
-      padding: 10px 14px;
-      border-radius: 12px;
+      border: 1px solid rgba(107, 92, 168, 0.35);
+      padding: 10px 16px;
+      border-radius: 14px;
       font-weight: 700;
-      letter-spacing: 0.2px;
     }
 
     .btn:hover {
-      background: rgba(107, 92, 168, 0.18);
+      background: rgba(107, 92, 168, 0.22);
     }
 
     @media (max-width: 768px) {
@@ -158,10 +160,12 @@
     <div class="hero">
       <h1>Welcome</h1>
       <p>
-        This is my website. Use the menu at the top to visit each section.
+        This is my website. Use the menu at the top to explore my projects,
+        activities, and interests.
       </p>
       <p>
-        I share my school projects, sports, hobbies, and more here.
+        I share my schoolwork, sports, hobbies, and more as I continue to
+        learn and grow.
       </p>
 
       <div class="cta-row">
