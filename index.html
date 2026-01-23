@@ -6,12 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* Base styles */
+    /* =========================
+       Base + Background
+       ========================= */
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: #333;
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: #2e2e2e;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(190, 160, 255, 0.35),
+          rgba(255, 255, 255, 0.9) 45%
+        ),
+        radial-gradient(
+          circle at bottom right,
+          rgba(160, 120, 255, 0.35),
+          rgba(255, 255, 255, 0.9) 50%
+        );
+      min-height: 100vh;
     }
 
     /* =========================
@@ -21,8 +34,9 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: #ffffff;
-      border-bottom: 1px solid #e6e6e6;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .header-inner {
@@ -36,7 +50,7 @@
 
     .brand {
       text-decoration: none;
-      color: #7a7a7a;
+      color: #6b5ca8;
       font-weight: 700;
       letter-spacing: 1.5px;
       font-size: 22px;
@@ -50,7 +64,7 @@
 
     .nav a {
       text-decoration: none;
-      color: #8f8f8f;
+      color: #7a7a7a;
       font-weight: 700;
       font-size: 14px;
       letter-spacing: 0.8px;
@@ -60,42 +74,40 @@
     }
 
     .nav a:hover {
-      color: #5f5f5f;
-      border-bottom-color: #cfcfcf;
+      color: #6b5ca8;
+      border-bottom-color: #bfaeff;
     }
 
     /* =========================
-       Page content
+       Content Cards
        ========================= */
     main {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 48px 32px;
+      padding: 64px 32px;
     }
 
     section {
-      padding: 64px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    section:last-child {
-      border-bottom: none;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin-bottom: 12px;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(6px);
+      border-radius: 18px;
+      padding: 48px;
+      margin-bottom: 48px;
+      box-shadow:
+        0 20px 40px rgba(120, 90, 200, 0.15),
+        0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
     h2 {
+      margin-top: 0;
       font-size: 26px;
-      margin-bottom: 12px;
+      color: #4b3c82;
     }
 
     p {
       font-size: 16px;
       line-height: 1.6;
-      max-width: 700px;
+      max-width: 720px;
     }
 
     /* =========================
@@ -111,6 +123,10 @@
       .nav {
         flex-wrap: wrap;
         gap: 16px;
+      }
+
+      section {
+        padding: 32px;
       }
     }
   </style>
@@ -131,37 +147,37 @@
     </div>
   </header>
 
-  <!-- Page Content -->
+  <!-- Content -->
   <main>
     <section id="about">
       <h2>About</h2>
       <p>
-        Welcome to my website. This is a place where I share my interests,
-        school projects, sports, and hobbies.
+        Welcome to my website. This space shares who I am, what I enjoy,
+        and the things I am learning and creating.
       </p>
     </section>
 
     <section id="school-projects">
       <h2>School Projects</h2>
       <p>
-        Here you can find examples of my school work, presentations,
-        and projects I am proud of.
+        This section highlights school projects, assignments, and creative
+        work I am proud of.
       </p>
     </section>
 
     <section id="sports">
       <h2>Sports</h2>
       <p>
-        I enjoy participating in sports and staying active. This section
-        highlights my teams, activities, and achievements.
+        I enjoy staying active and participating in sports. Here you’ll find
+        my activities and experiences.
       </p>
     </section>
 
     <section id="hobbies">
       <h2>Hobbies</h2>
       <p>
-        In my free time, I enjoy creative and fun activities that help me
-        learn and grow.
+        In my free time, I enjoy hobbies that let me be creative, curious,
+        and have fun.
       </p>
     </section>
   </main>
