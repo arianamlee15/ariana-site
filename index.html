@@ -111,6 +111,17 @@
     }
 
     /* =========================
+       About Photo
+       ========================= */
+    .about-photo {
+      width: 200px;
+      max-width: 100%;
+      border-radius: 18px;
+      margin-bottom: 24px;
+      box-shadow: 0 18px 36px rgba(120, 90, 200, 0.25);
+    }
+
+    /* =========================
        Mobile
        ========================= */
     @media (max-width: 768px) {
@@ -149,11 +160,24 @@
 
   <!-- Content -->
   <main>
+
     <section id="about">
       <h2>About</h2>
+
+      <img
+        src="about-photo.jpg"
+        alt="Photo of Ariana"
+        class="about-photo"
+      >
+
       <p>
         Welcome to my website. This space shares who I am, what I enjoy,
         and the things I am learning and creating.
+      </p>
+
+      <p>
+        This website is a place for me to share my school projects,
+        sports activities, and hobbies as I continue to learn and grow.
       </p>
     </section>
 
@@ -180,6 +204,7 @@
         and have fun.
       </p>
     </section>
+
   </main>
 
 </body>
