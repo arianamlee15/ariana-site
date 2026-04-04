@@ -16,7 +16,6 @@
       min-height: 100vh;
     }
 
-    /* Header */
     .site-header {
       position: sticky;
       top: 0;
@@ -72,7 +71,6 @@
       border-bottom-color: #6b5ca8;
     }
 
-    /* Layout */
     main {
       max-width: 1000px;
       margin: 0 auto;
@@ -114,7 +112,6 @@
       font-weight: 800;
     }
 
-    /* Book list */
     .book-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -135,7 +132,6 @@
       font-size: 16px;
       font-weight: 800;
       color: #4b3c82;
-      line-height: 1.3;
     }
 
     .tag {
@@ -147,24 +143,6 @@
       border: 1px solid rgba(107, 92, 168, 0.22);
       background: rgba(107, 92, 168, 0.10);
       color: #4b3c82;
-    }
-
-    .note {
-      font-size: 13px;
-      color: #5a5a5a;
-      margin-top: 10px;
-      line-height: 1.4;
-    }
-
-    @media (max-width: 768px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-      .card {
-        padding: 32px;
-      }
     }
   </style>
 </head>
@@ -206,18 +184,7 @@
         </div>
 
         <div class="book">
-          <div class="book-title">Amari</div>
-          <span class="tag">Read</span>
-          <div class="note">Series or title note: you can add the full title later if you want.</div>
-        </div>
-
-        <div class="book">
-          <div class="book-title">Rules</div>
-          <span class="tag">Read</span>
-        </div>
-
-        <div class="book">
-          <div class="book-title">Class Dismissed</div>
+          <div class="book-title">The BFG</div>
           <span class="tag">Read</span>
         </div>
 
@@ -225,24 +192,19 @@
           <div class="book-title">City of Spies</div>
           <span class="tag">Read</span>
         </div>
-        
+
         <div class="book">
-          <div class="book-title">3rd Grade Angels</div>
+          <div class="book-title">City of Spies 2</div>
           <span class="tag">Read</span>
         </div>
 
         <div class="book">
-          <div class="book-title">4th Grade Rats</div>
+          <div class="book-title">Amari</div>
           <span class="tag">Read</span>
         </div>
 
-        <div class="book">
-          <div class="book-title">The Babysitters Club</div>
-          <span class="tag">Read</span>
-          <div class="note">You can list specific titles later if you want.</div>
-        </div>
-
-        <div class="book">
-          <div class="book-title">Nancy Drew (Books 1–10)</div>
-          <span class="tag">Read</span>
-        </di
+      </div>
+    </div>
+  </main>
+</body>
+</html>
