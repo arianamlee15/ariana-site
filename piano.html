@@ -96,20 +96,26 @@
     }
 
     h2 {
-      margin-top: 24px;
+      margin-bottom: 10px;
       color: #5a4b9a;
+      font-size: 18px;
     }
 
     p {
       font-size: 16px;
       line-height: 1.6;
-      max-width: 760px;
-      margin: 0 0 14px;
+      margin-bottom: 20px;
     }
 
-    /* Video styling */
-    .video-container {
+    /* GRID LAYOUT */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
       margin-top: 20px;
+    }
+
+    .video-container {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
@@ -126,6 +132,7 @@
       border: none;
     }
 
+    /* MOBILE */
     @media (max-width: 768px) {
       .header-inner {
         flex-direction: column;
@@ -135,6 +142,10 @@
 
       .card {
         padding: 32px;
+      }
+
+      .video-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -161,17 +172,42 @@
 
       <p>
         This page shows some of the songs I have been practicing and learning on the piano.
-        I enjoy playing music and getting better with each song.
       </p>
 
-      <h2>My Piano Song</h2>
+      <div class="video-grid">
 
-      <div class="video-container">
-        <iframe 
-          src="https://www.youtube.com/embed/Sp7D8NjF_KE"
-          title="Piano Song"
-          allowfullscreen>
-        </iframe>
+        <!-- VIDEO 1 -->
+        <div>
+          <h2>Song 1</h2>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/VIDEO1" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div>
+          <h2>Song 2</h2>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/VIDEO2" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div>
+          <h2>Song 3</h2>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/K-l4UQN3qMQ" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- VIDEO 4 -->
+        <div>
+          <h2>Song 4</h2>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/Sp7D8NjF_KE" allowfullscreen></iframe>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
