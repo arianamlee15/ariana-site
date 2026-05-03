@@ -94,36 +94,67 @@
       color: #4b3c82;
     }
 
-    h2 {
-      margin-top: 30px;
-      font-size: 22px;
-      color: #5a4bb0;
-    }
-
     p {
       font-size: 16px;
       line-height: 1.6;
       max-width: 760px;
-      margin: 0 0 20px;
+      margin: 0 0 30px;
     }
 
-    .pdf-container {
-      margin-top: 20px;
-      border-radius: 12px;
+    /* Accordion styles */
+    .accordion-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: 600;
+      color: #5a4bb0;
+      padding: 10px 0;
+    }
+
+    .accordion-header:hover {
+      color: #6b5ca8;
+    }
+
+    .plus {
+      font-size: 26px;
+      font-weight: bold;
+      transition: transform 0.2s ease;
+    }
+
+    .accordion-content {
+      max-height: 0;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: max-height 0.4s ease;
     }
 
-    iframe {
+    .accordion-content iframe {
       width: 100%;
       height: 700px;
       border: none;
+      margin-top: 10px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .accordion-item.active .accordion-content {
+      max-height: 800px;
+    }
+
+    .accordion-item.active .plus {
+      transform: rotate(45deg); /* turns + into x */
     }
 
     @media (max-width: 768px) {
-      .header-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .header-inner { flex-direction: column; align-items: flex-start; }
       .card { padding: 32px; }
-      iframe { height: 500px; }
+      .accordion-content iframe { height: 500px; }
     }
   </style>
 </head>
@@ -150,19 +181,45 @@
       <p>
         This page showcases the school projects I have worked on throughout the year. 
         Each project reflects what I am learning in class and how I apply my skills 
-        in different subjects. As I complete new projects, I will continue to add them here 
-        to track my progress and growth. This page is also for projects that I work on home.
+        in different subjects.
       </p>
 
-      <!-- Project Title -->
-      <h2>How Issac Newton Somewhat Ruined My Week</h2>
+      <!-- Project 1 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>How Issac Newton Somewhat Ruined My Week</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-content">
+          <iframe src="files/how-issac-newton.pdf"></iframe>
+        </div>
+      </div>
 
-      <!-- PDF Viewer -->
-      <div class="pdf-container">
-        <iframe src="files/how-issac-newton.pdf"></iframe>
+      <!-- Project 2 -->
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Costa Rica Project</span>
+          <span class="plus">+</span>
+        </div>
+        <div class="accordion-content">
+          <iframe src="files/costa-rica.pdf"></iframe>
+        </div>
       </div>
 
     </div>
   </main>
+
+  <script>
+    const items = document.querySelectorAll(".accordion-item");
+
+    items.forEach(item => {
+      const header = item.querySelector(".accordion-header");
+
+      header.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+
 </body>
 </html>
