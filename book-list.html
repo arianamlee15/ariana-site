@@ -32,7 +32,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .brand {
@@ -55,9 +54,7 @@
       color: #7a7a7a;
       font-weight: 700;
       font-size: 14px;
-      letter-spacing: 0.8px;
       text-transform: uppercase;
-      padding-bottom: 4px;
       border-bottom: 2px solid transparent;
     }
 
@@ -79,7 +76,6 @@
 
     .card {
       background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(6px);
       border-radius: 18px;
       padding: 48px;
       box-shadow:
@@ -88,21 +84,14 @@
     }
 
     h1 {
-      margin: 0 0 10px;
       font-size: 32px;
       color: #4b3c82;
+      margin-bottom: 10px;
     }
 
     h2 {
       margin-top: 30px;
-      margin-bottom: 10px;
       color: #6b5ca8;
-    }
-
-    p {
-      margin: 0 0 18px;
-      line-height: 1.6;
-      max-width: 760px;
     }
 
     .divider {
@@ -114,104 +103,86 @@
     .book-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 12px;
+      gap: 20px;
     }
 
     .book {
       background: rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(107, 92, 168, 0.16);
       border-radius: 14px;
       padding: 16px;
       box-shadow: 0 10px 20px rgba(120, 90, 200, 0.12);
     }
 
     .book-title {
-      margin: 0 0 8px;
-      font-size: 16px;
       font-weight: 800;
       color: #4b3c82;
-    }
-
-    .tag {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 700;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(107, 92, 168, 0.22);
-      background: rgba(107, 92, 168, 0.10);
-      color: #4b3c82;
+      margin-bottom: 6px;
     }
 
     .stars {
-      margin-top: 8px;
-      font-size: 16px;
       color: #f5b301;
+      font-size: 16px;
     }
+
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">Ariana Lee</a>
-      <nav class="nav">
-        <a href="about.html">About</a>
-        <a href="school-projects.html">School Projects</a>
-        <a href="sports.html">Sports</a>
-        <a href="piano.html">Piano</a>
-        <a href="hobbies.html">Hobbies</a>
-        <a class="active" href="book-list.html">Book List</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Ariana Lee</a>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="school-projects.html">School Projects</a>
+      <a href="sports.html">Sports</a>
+      <a href="piano.html">Piano</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a class="active" href="book-list.html">Book List</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <div class="card">
-      <h1>Book List</h1>
-      <p>Here are books I have read so far. I will keep adding more as I read them.</p>
+<main>
+  <div class="card">
+    <h1>Book List</h1>
 
-      <div class="divider"></div>
+    <div class="divider"></div>
 
-      <h2>Read</h2>
-      <div class="book-grid">
-        <div class="book"><div class="book-title">Matilda</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">The Twits</div><span class="tag">Read</span><div class="stars">★★★★☆</div></div>
-        <div class="book"><div class="book-title">The BFG</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">Amari</div><span class="tag">Read</span><div class="stars">★★★★☆</div></div>
-        <div class="book"><div class="book-title">Rules</div><span class="tag">Read</span><div class="stars">★★★☆☆</div></div>
-        <div class="book"><div class="book-title">Class Dismissed</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">City of Spies</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">City of Spies 2</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">Terrible 2</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">Lucky Strike</div><span class="tag">Read</span><div class="stars">★★★☆☆</div></div>
-        <div class="book"><div class="book-title">3rd Grade Angels</div><span class="tag">Read</span><div class="stars">★★★☆☆</div></div>
-        <div class="book"><div class="book-title">4th Grade Rats</div><span class="tag">Read</span><div class="stars">★★★★☆</div></div>
-      </div>
+    <h2>Books</h2>
+    <div class="book-grid">
 
-      <h2>Harry Potter Series</h2>
-      <div class="book-grid">
-        <div class="book"><div class="book-title">Harry Potter and the Sorcerer’s Stone</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">Harry Potter and the Chamber of Secrets</div><span class="tag">Read</span><div class="stars">★★★★☆</div></div>
-        <div class="book"><div class="book-title">Harry Potter and the Prisoner of Azkaban</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-      </div>
+      <div class="book"><div class="book-title">Matilda</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">The Twits</div><div class="stars">★★★★☆</div></div>
+      <div class="book"><div class="book-title">The BFG</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">Amari</div><div class="stars">★★★★☆</div></div>
+      <div class="book"><div class="book-title">Rules</div><div class="stars">★★★☆☆</div></div>
+      <div class="book"><div class="book-title">Class Dismissed</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">City of Spies</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">City of Spies 2</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">Terrible 2</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">Lucky Strike</div><div class="stars">★★★☆☆</div></div>
+      <div class="book"><div class="book-title">3rd Grade Angels</div><div class="stars">★★★☆☆</div></div>
+      <div class="book"><div class="book-title">4th Grade Rats</div><div class="stars">★★★★☆</div></div>
 
-      <h2>Nancy Drew Series</h2>
-      <div class="book-grid">
-        <div class="book"><div class="book-title">The Secret of the Old Clock</div><span class="tag">Read</span><div class="stars">★★★★☆</div></div>
-        <div class="book"><div class="book-title">The Hidden Staircase</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">The Bungalow Mystery</div><span class="tag">Read</span><div class="stars">★★★★☆</div></div>
-        <div class="book"><div class="book-title">The Mystery at Lilac Inn</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">The Secret at Shadow Ranch</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">The Secret of Red Gate Farm</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-        <div class="book"><div class="book-title">The Clue in the Diary</div><span class="tag">Read</span><div class="stars">★★★★☆</div></div>
-        <div class="book"><div class="book-title">Nancy's Mysterious Letter</div><span class="tag">Read</span><div class="stars">★★★☆☆</div></div>
-        <div class="book"><div class="book-title">The Sign of the Twisted Candles</div><span class="tag">Read</span><div class="stars">★★★★☆</div></div>
-        <div class="book"><div class="book-title">The Password to Larkspur Lane</div><span class="tag">Read</span><div class="stars">★★★★★</div></div>
-      </div>
+      <div class="book"><div class="book-title">Harry Potter and the Sorcerer’s Stone</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">Harry Potter and the Chamber of Secrets</div><div class="stars">★★★★☆</div></div>
+      <div class="book"><div class="book-title">Harry Potter and the Prisoner of Azkaban</div><div class="stars">★★★★★</div></div>
+
+      <div class="book"><div class="book-title">The Secret of the Old Clock</div><div class="stars">★★★★☆</div></div>
+      <div class="book"><div class="book-title">The Hidden Staircase</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">The Bungalow Mystery</div><div class="stars">★★★★☆</div></div>
+      <div class="book"><div class="book-title">The Mystery at Lilac Inn</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">The Secret at Shadow Ranch</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">The Secret of Red Gate Farm</div><div class="stars">★★★★★</div></div>
+      <div class="book"><div class="book-title">The Clue in the Diary</div><div class="stars">★★★★☆</div></div>
+      <div class="book"><div class="book-title">Nancy's Mysterious Letter</div><div class="stars">★★★☆☆</div></div>
+      <div class="book"><div class="book-title">The Sign of the Twisted Candles</div><div class="stars">★★★★☆</div></div>
+      <div class="book"><div class="book-title">The Password to Larkspur Lane</div><div class="stars">★★★★★</div></div>
 
     </div>
-  </main>
+
+  </div>
+</main>
+
 </body>
 </html>
