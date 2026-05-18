@@ -10,140 +10,72 @@
       margin: 0;
       font-family: "Segoe UI", Arial, Helvetica, sans-serif;
       color: #2e2e2e;
-
       background:
         radial-gradient(circle at top left, rgba(190, 160, 255, 0.35), rgba(255, 255, 255, 0.9) 45%),
         radial-gradient(circle at bottom right, rgba(160, 120, 255, 0.35), rgba(255, 255, 255, 0.9) 50%);
-
-      min-height: 100vh;
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 1000;
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .header-inner {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 22px 32px;
+      padding: 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand {
-      text-decoration: none;
-      color: #6b5ca8;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      font-size: 22px;
-      text-transform: uppercase;
     }
 
     .nav {
       display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .nav a {
       text-decoration: none;
       color: #7a7a7a;
       font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav a:hover {
-      color: #6b5ca8;
-      border-bottom-color: #bfaeff;
     }
 
     .nav a.active {
       color: #4b3c82;
-      border-bottom-color: #6b5ca8;
     }
 
     main {
       max-width: 1000px;
-      margin: 0 auto;
-      padding: 64px 32px;
+      margin: auto;
+      padding: 40px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(6px);
-      border-radius: 18px;
-      padding: 48px;
-      box-shadow:
-        0 20px 40px rgba(120, 90, 200, 0.15),
-        0 2px 6px rgba(0, 0, 0, 0.05);
+      background: rgba(255,255,255,0.8);
+      padding: 40px;
+      border-radius: 20px;
     }
 
-    h1 {
-      margin: 0 0 12px;
-      font-size: 32px;
-      color: #4b3c82;
-    }
-
-    h2 {
-      margin-bottom: 10px;
-      color: #5a4b9a;
-      font-size: 18px;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    /* GRID LAYOUT */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
-      margin-top: 20px;
     }
 
     .video-container {
       position: relative;
-      width: 100%;
       padding-bottom: 56.25%;
-      border-radius: 12px;
-      overflow: hidden;
     }
 
     .video-container iframe {
       position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       border: none;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-
-      .card {
-        padding: 32px;
-      }
-
       .video-grid {
         grid-template-columns: 1fr;
       }
@@ -152,64 +84,44 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">Ariana Lee</a>
-      <nav class="nav">
-        <a href="about.html">About</a>
-        <a href="school-projects.html">School Projects</a>
-        <a href="sports.html">Sports</a>
-        <a class="active" href="piano.html">Piano</a>
-        <a href="hobbies.html">Hobbies</a>
-        <a href="book-list.html">Book List</a>
-      </nav>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html">Ariana Lee</a>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="school-projects.html">School Projects</a>
+      <a href="sports.html">Sports</a>
+      <a class="active" href="piano.html">Piano</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="book-list.html">Book List</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+
+    <h1>Piano</h1>
+
+    <div class="video-grid">
+
+      <!-- ORIGINAL 4 -->
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/SFkgZG4FzN4" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/evkxhebkhYc" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/K-l4UQN3qMQ" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/Sp7D8NjF_KE" allowfullscreen></iframe></div>
+
+      <!-- NEW 4 -->
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/aeBrRYsxnaM" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/sRBUbEciIzQ" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/762I1-3s4bQ" allowfullscreen></iframe></div>
+      <div class="video-container"><iframe src="https://www.youtube.com/embed/762I1-3s4bQ" allowfullscreen></iframe></div>
+
     </div>
-  </header>
 
-  <main>
-    <div class="card">
-      <h1>Piano</h1>
+  </div>
+</main>
 
-      <p>
-        This page shows some of the songs I have been practicing and learning on the piano.
-      </p>
-
-      <div class="video-grid">
-
-        <!-- VIDEO 1 -->
-        <div>
-
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/SFkgZG4FzN4" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 2 -->
-        <div>
-   
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/evkxhebkhYc" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 3 -->
-        <div>
-   
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/K-l4UQN3qMQ" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- VIDEO 4 -->
-        <div>
-         
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/Sp7D8NjF_KE" allowfullscreen></iframe>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </main>
 </body>
 </html>
