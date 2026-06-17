@@ -13,141 +13,216 @@
       background:
         radial-gradient(circle at top left, rgba(190, 160, 255, 0.35), rgba(255, 255, 255, 0.9) 45%),
         radial-gradient(circle at bottom right, rgba(160, 120, 255, 0.35), rgba(255, 255, 255, 0.9) 50%);
-      min-height: 100vh;
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255,255,255,0.85);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .header-inner {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
       padding: 22px 32px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .brand {
-      text-decoration: none;
       color: #6b5ca8;
       font-weight: 700;
-      letter-spacing: 1.5px;
-      font-size: 22px;
-      text-transform: uppercase;
+      text-decoration: none;
     }
 
     .nav {
       display: flex;
       gap: 28px;
-      flex-wrap: wrap;
     }
 
     .nav a {
       text-decoration: none;
       color: #7a7a7a;
       font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav a:hover {
-      color: #6b5ca8;
-      border-bottom-color: #bfaeff;
     }
 
     .nav a.active {
       color: #4b3c82;
-      border-bottom-color: #6b5ca8;
+      border-bottom: 2px solid #6b5ca8;
     }
 
     main {
       max-width: 1000px;
-      margin: 0 auto;
+      margin: auto;
       padding: 64px 32px;
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.75);
       border-radius: 18px;
       padding: 48px;
-      box-shadow:
-        0 20px 40px rgba(120, 90, 200, 0.15),
-        0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 20px 40px rgba(120,90,200,0.15);
     }
 
     h1 {
-      margin: 0 0 12px;
-      font-size: 32px;
+      text-align: center;
       color: #4b3c82;
     }
 
     h2 {
       margin-top: 28px;
       color: #6b5ca8;
-      font-size: 22px;
     }
 
     p {
-      font-size: 16px;
-      line-height: 1.6;
       max-width: 760px;
-      margin: 0 0 14px;
+      margin: 0 auto 14px;
+      text-align: center;
+      line-height: 1.6;
     }
 
-    @media (max-width: 768px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-      .card {
-        padding: 32px;
-      }
+    /* NEW: Stats */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-box {
+      background: white;
+      padding: 15px 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .stat-title {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .stat-value {
+      font-weight: bold;
+      color: #5a4bb0;
+    }
+
+    /* Expandable sections */
+    .expand-card {
+      background: white;
+      border-radius: 16px;
+      margin-top: 15px;
+      padding: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .expand-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .expand-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: #5a4bb0;
+    }
+
+    .expand-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .expand-card.active .expand-details {
+      max-height: 200px;
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">Ariana Lee</a>
-      <nav class="nav">
-        <a href="about.html">About</a>
-        <a href="school-projects.html">School Projects</a>
-        <a class="active" href="sports.html">Sports</a>
-        <a href="piano.html">Piano</a>
-        <a href="hobbies.html">Hobbies</a>
-        <a href="book-list.html">Book List</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <div class="card">
-      <h1>Sports</h1>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Ariana Lee</a>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="school-projects.html">School Projects</a>
+      <a class="active" href="sports.html">Sports</a>
+      <a href="piano.html">Piano</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="book-list.html">Book List</a>
+    </nav>
+  </div>
+</header>
 
-      <p>
-        I have been playing travel soccer for two years now, and it is one of my favorite sports. I enjoy practicing, playing in games, and getting better with my team. Besides soccer, I also like playing other sports with my family such as pickleball, softball, basketball, and tennis. I also enjoy riding my bike and my electric scooter, which is really fun. In the summer, I love to go swimming and spend time in the water.
-      </p>
+<main>
+<div class="card">
 
-      <h2>My Position</h2>
-      <p>
-        I play wing in soccer, which means I help move the ball down the field and create scoring chances for my team. One of my favorite moments was when I scored four goals in one game.
-      </p>
+<h1>Sports</h1>
 
-    </div>
-  </main>
+<p>
+  I have been playing travel soccer for two years now, and it is one of my favorite sports. I enjoy practicing, playing in games, and getting better with my team. Besides soccer, I also like playing other sports with my family such as pickleball, softball, basketball, and tennis. I also enjoy riding my bike and my electric scooter, which is really fun. In the summer, I love to go swimming and spend time in the water.
+</p>
+
+<!-- NEW: STATS -->
+<div class="stats">
+  <div class="stat-box">
+    <div class="stat-title">Sport</div>
+    <div class="stat-value">Soccer</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-title">Experience</div>
+    <div class="stat-value">2 Years</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-title">Position</div>
+    <div class="stat-value">Wing</div>
+  </div>
+</div>
+
+<h2>My Position</h2>
+<p>
+  I play wing in soccer, which means I help move the ball down the field and create scoring chances for my team. One of my favorite moments was when I scored four goals in one game.
+</p>
+
+<!-- NEW: EXPANDABLE SECTIONS -->
+
+<div class="expand-card" onclick="toggle(this)">
+  <div class="expand-title">⚽ Training <span>+</span></div>
+  <div class="expand-details">
+    I practice skills like dribbling, passing, and shooting to improve my game. Training helps me get better and prepares me for matches.
+  </div>
+</div>
+
+<div class="expand-card" onclick="toggle(this)">
+  <div class="expand-title">🏆 Games <span>+</span></div>
+  <div class="expand-details">
+    Playing in games is exciting because I get to compete and help my team. I enjoy scoring goals and creating chances.
+  </div>
+</div>
+
+<div class="expand-card" onclick="toggle(this)">
+  <div class="expand-title">🎯 Goals <span>+</span></div>
+  <div class="expand-details">
+    My goal is to keep improving my skills, become a stronger player, and continue developing each season.
+  </div>
+</div>
+
+</div>
+</main>
+
+<script>
+function toggle(card) {
+  card.classList.toggle("active");
+}
+</script>
+
 </body>
 </html>
