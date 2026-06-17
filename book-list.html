@@ -34,7 +34,6 @@
       margin: 0 auto;
       padding: 22px 32px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
     }
 
@@ -42,7 +41,6 @@
       text-decoration: none;
       color: #6b5ca8;
       font-weight: 700;
-      letter-spacing: 1.5px;
       font-size: 22px;
       text-transform: uppercase;
     }
@@ -58,17 +56,11 @@
       font-weight: 700;
       font-size: 14px;
       text-transform: uppercase;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav a:hover {
-      color: #6b5ca8;
     }
 
     .nav a.active {
       color: #4b3c82;
-      border-bottom-color: #6b5ca8;
+      border-bottom: 2px solid #6b5ca8;
     }
 
     main {
@@ -81,119 +73,127 @@
       background: rgba(255, 255, 255, 0.75);
       border-radius: 18px;
       padding: 48px;
-      box-shadow:
-        0 20px 40px rgba(120, 90, 200, 0.15),
-        0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 20px 40px rgba(120, 90, 200, 0.15);
     }
 
     h1 {
       font-size: 32px;
       color: #4b3c82;
-      margin-bottom: 20px;
     }
 
     h2 {
-      margin-top: 30px;
+      margin-top: 40px;
       color: #5a4bb0;
+      opacity: 0;
+      transform: translateX(-20px);
+      animation: slideIn 0.6s ease forwards;
+    }
+
+    @keyframes slideIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     .book-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 10px;
+      gap: 20px;
+      margin-top: 15px;
     }
 
     .book {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 14px 18px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      width: 160px;
+      background: white;
+      border-radius: 14px;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    /* Hover lift */
+    .book:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 25px rgba(0,0,0,0.18);
+    }
+
+    .book img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .title {
+      margin-top: 8px;
       font-size: 14px;
-      min-width: 180px;
+      font-weight: 600;
     }
 
     .rating {
       margin-top: 6px;
       color: #f5b301;
-      font-weight: bold;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    /* Star glow */
+    .book:hover .rating {
+      text-shadow: 0 0 10px rgba(255,200,0,0.9);
     }
 
     @media (max-width: 768px) {
-      .card { padding: 32px; }
-      .book-list { flex-direction: column; }
+      .book-list {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">Ariana Lee</a>
-      <nav class="nav">
-        <a href="about.html">About</a>
-        <a href="school-projects.html">School Projects</a>
-        <a href="sports.html">Sports</a>
-        <a href="piano.html">Piano</a>
-        <a href="hobbies.html">Hobbies</a>
-        <a class="active" href="book-list.html">Book List</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Ariana Lee</a>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="school-projects.html">School Projects</a>
+      <a href="sports.html">Sports</a>
+      <a href="piano.html">Piano</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a class="active" href="book-list.html">Book List</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <div class="card">
-      <h1>Book List</h1>
+<main>
+<div class="card">
+<h1>Book List</h1>
 
-      <!-- Roald Dahl -->
-      <h2>Roald Dahl</h2>
-      <div class="book-list">
-        <div class="book">Matilda<div class="rating">★★★★★</div></div>
-        <div class="book">The Twits<div class="rating">★★★★☆</div></div>
-        <div class="book">The BFG<div class="rating">★★★★★</div></div>
-        <div class="book">The Magic Finger<div class="rating">★★★☆☆</div></div>
-      </div>
+<!-- Roald Dahl -->
+<h2>Roald Dahl</h2>
+<div class="book-list">
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/8228691-L.jpg"><div class="title">Matilda</div><div class="rating">★★★★★</div></div>
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/8231856-L.jpg"><div class="title">The Twits</div><div class="rating">★★★★☆</div></div>
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/8225265-L.jpg"><div class="title">The BFG</div><div class="rating">★★★★★</div></div>
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/8231990-L.jpg"><div class="title">The Magic Finger</div><div class="rating">★★★☆☆</div></div>
+</div>
 
-      <!-- Other Books -->
-      <h2>Other Books</h2>
-      <div class="book-list">
-        <div class="book">Amari<div class="rating">★★★★☆</div></div>
-        <div class="book">Rules<div class="rating">★★★☆☆</div></div>
-        <div class="book">Class Dismissed<div class="rating">★★★★★</div></div>
-        <div class="book">City of Spies<div class="rating">★★★★★</div></div>
-        <div class="book">City of Spies 2<div class="rating">★★★★★</div></div>
-        <div class="book">Terrible Two<div class="rating">★★★★★</div></div>
-        <div class="book">Lucky Strike<div class="rating">★★★☆☆</div></div>
-        <div class="book">3rd Grade Angels<div class="rating">★★★☆☆</div></div>
-        <div class="book">4th Grade Rats<div class="rating">★★★★☆</div></div>
-        <div class="book">Front Desk<div class="rating">★★★★★</div></div>
-        <div class="book">Homework Machine<div class="rating">★★★★★</div></div>
-      </div>
+<!-- Harry Potter -->
+<h2>Harry Potter</h2>
+<div class="book-list">
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/7984916-L.jpg"><div class="title">Sorcerer's Stone</div><div class="rating">★★★★★</div></div>
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/7984917-L.jpg"><div class="title">Chamber of Secrets</div><div class="rating">★★★★☆</div></div>
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/7984918-L.jpg"><div class="title">Prisoner of Azkaban</div><div class="rating">★★★★★</div></div>
+</div>
 
-      <!-- Harry Potter -->
-      <h2>Harry Potter</h2>
-      <div class="book-list">
-        <div class="book">Sorcerer’s Stone<div class="rating">★★★★★</div></div>
-        <div class="book">Chamber of Secrets<div class="rating">★★★★☆</div></div>
-        <div class="book">Prisoner of Azkaban<div class="rating">★★★★★</div></div>
-      </div>
+<!-- Nancy Drew -->
+<h2>Nancy Drew</h2>
+<div class="book-list">
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/8235116-L.jpg"><div class="title">Old Clock</div><div class="rating">★★★★☆</div></div>
+  <div class="book"><img src="https://covers.openlibrary.org/b/id/8235117-L.jpg"><div class="title">Hidden Staircase</div><div class="rating">★★★★★</div></div>
+</div>
 
-      <!-- Nancy Drew -->
-      <h2>Nancy Drew</h2>
-      <div class="book-list">
-        <div class="book">The Secret of the Old Clock<div class="rating">★★★★☆</div></div>
-        <div class="book">The Hidden Staircase<div class="rating">★★★★★</div></div>
-        <div class="book">The Bungalow Mystery<div class="rating">★★★★☆</div></div>
-        <div class="book">The Mystery at Lilac Inn<div class="rating">★★★★★</div></div>
-        <div class="book">The Secret at Shadow Ranch<div class="rating">★★★★★</div></div>
-        <div class="book">The Secret of Red Gate Farm<div class="rating">★★★★★</div></div>
-        <div class="book">The Clue in the Diary<div class="rating">★★★★☆</div></div>
-        <div class="book">Nancy’s Mysterious Letter<div class="rating">★★★☆☆</div></div>
-        <div class="book">The Sign of the Twisted Candles<div class="rating">★★★★☆</div></div>
-        <div class="book">The Password to Larkspur Lane<div class="rating">★★★★★</div></div>
-      </div>
-
-    </div>
-  </main>
+</div>
+</main>
 </body>
 </html>
