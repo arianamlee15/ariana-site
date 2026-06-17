@@ -11,28 +11,34 @@
       font-family: "Segoe UI", Arial, Helvetica, sans-serif;
       color: #2e2e2e;
       background:
-        radial-gradient(circle at top left, rgba(190, 160, 255, 0.35), rgba(255, 255, 255, 0.9) 45%),
-        radial-gradient(circle at bottom right, rgba(160, 120, 255, 0.35), rgba(255, 255, 255, 0.9) 50%);
+        radial-gradient(circle at top left, rgba(190,160,255,0.35), white 45%),
+        radial-gradient(circle at bottom right, rgba(160,120,255,0.35), white 50%);
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255,255,255,0.85);
       backdrop-filter: blur(8px);
     }
 
     .header-inner {
       max-width: 1200px;
       margin: auto;
-      padding: 20px;
+      padding: 22px 32px;
       display: flex;
       justify-content: space-between;
     }
 
+    .brand {
+      color: #6b5ca8;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
     .nav {
       display: flex;
-      gap: 20px;
+      gap: 28px;
     }
 
     .nav a {
@@ -43,28 +49,61 @@
 
     .nav a.active {
       color: #4b3c82;
+      border-bottom: 2px solid #6b5ca8;
     }
 
     main {
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
-      padding: 40px;
+      padding: 64px 32px;
     }
 
-    .card {
-      background: rgba(255,255,255,0.8);
-      padding: 40px;
-      border-radius: 20px;
+    h1 {
+      text-align: center;
+      color: #4b3c82;
     }
 
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+    p {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    /* Expandable video cards */
+    .video-card {
+      background: white;
+      border-radius: 16px;
+      margin-bottom: 15px;
+      padding: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-title {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      color: #5a4bb0;
+    }
+
+    .video-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .video-card.active .video-content {
+      max-height: 500px;
     }
 
     .video-container {
       position: relative;
+      width: 100%;
       padding-bottom: 56.25%;
     }
 
@@ -74,12 +113,6 @@
       height: 100%;
       border: none;
     }
-
-    @media (max-width: 768px) {
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 
@@ -87,7 +120,7 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html">Ariana Lee</a>
+    <a href="index.html" class="brand">Ariana Lee</a>
     <nav class="nav">
       <a href="about.html">About</a>
       <a href="school-projects.html">School Projects</a>
@@ -100,35 +133,60 @@
 </header>
 
 <main>
-  <div class="card">
 
-    <h1>Piano</h1>
+<h1>Piano</h1>
 
-    <div class="video-grid">
+<p>
+  This page shows some of the songs I have been practicing and learning on the piano.
+</p>
 
-      <!-- EXISTING -->
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/SFkgZG4FzN4" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/evkxhebkhYc" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/K-l4UQN3qMQ" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/Sp7D8NjF_KE" allowfullscreen></iframe></div>
-
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/aeBrRYsxnaM" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/sRBUbEciIzQ" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/762I1-3s4bQ" allowfullscreen></iframe></div>
-
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/ejYNjXbdVnw" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/9MYoUbfh07U" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/GFJRr0dZZn8" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/yRJrETyv4FE" allowfullscreen></iframe></div>
-
-      <!-- NEW -->
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/UXtdCe2NQng" allowfullscreen></iframe></div>
-      <div class="video-container"><iframe src="https://www.youtube.com/embed/5CIBN8dOFZI" allowfullscreen></iframe></div>
-
+<!-- VIDEO 1 -->
+<div class="video-card" onclick="toggle(this)">
+  <div class="video-title">Song 1 <span>+</span></div>
+  <div class="video-content">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/SFkgZG4FzN4" allowfullscreen></iframe>
     </div>
-
   </div>
+</div>
+
+<!-- VIDEO 2 -->
+<div class="video-card" onclick="toggle(this)">
+  <div class="video-title">Song 2 <span>+</span></div>
+  <div class="video-content">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/evkxhebkhYc" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO 3 -->
+<div class="video-card" onclick="toggle(this)">
+  <div class="video-title">Song 3 <span>+</span></div>
+  <div class="video-content">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/K-l4UQN3qMQ" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO 4 -->
+<div class="video-card" onclick="toggle(this)">
+  <div class="video-title">Song 4 <span>+</span></div>
+  <div class="video-content">
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/Sp7D8NjF_KE" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
 </main>
+
+<script>
+function toggle(card) {
+  card.classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
