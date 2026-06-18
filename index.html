@@ -27,6 +27,9 @@
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+
+      min-height: 100vh;
+      position: relative;
     }
 
     .site-header {
@@ -79,9 +82,48 @@
       max-width: 1000px;
       margin: 0 auto;
       padding: 64px 32px;
+      position: relative;
+    }
+
+    /* FLOATING BACKGROUND SHAPES */
+    .floating-bg span {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      background: rgba(191, 174, 255, 0.35);
+      border-radius: 50%;
+      filter: blur(70px);
+      animation: float 12s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    .floating-bg span:nth-child(1) {
+      top: 80px;
+      left: 5%;
+    }
+
+    .floating-bg span:nth-child(2) {
+      top: 250px;
+      right: 5%;
+      animation-delay: 3s;
+    }
+
+    .floating-bg span:nth-child(3) {
+      bottom: 80px;
+      left: 40%;
+      animation-delay: 6s;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-40px); }
+      100% { transform: translateY(0px); }
     }
 
     .hero {
+      position: relative;
+      z-index: 1;
+
       background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(8px);
       border-radius: 20px;
@@ -89,20 +131,14 @@
       box-shadow:
         0 24px 48px rgba(120, 90, 200, 0.25),
         0 2px 6px rgba(0, 0, 0, 0.05);
+
       text-align: center;
     }
 
-    /* IMPROVED HEADER */
     h1 {
       margin: 0 0 12px;
-      font-size: 40px;
+      font-size: 38px;
       color: #4b3c82;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      color: #555;
-      margin-bottom: 20px;
     }
 
     p {
@@ -112,7 +148,6 @@
       margin: 0 auto 14px;
     }
 
-    /* IMPROVED BUTTON GRID */
     .cta-row {
       margin-top: 30px;
       display: grid;
@@ -134,7 +169,6 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    /* HOVER LIFT (BIG IMPROVEMENT) */
     .btn:hover {
       transform: translateY(-6px);
       box-shadow: 0 16px 28px rgba(0,0,0,0.18);
@@ -144,50 +178,54 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">Ariana Lee</a>
-      <nav class="nav">
-        <a href="about.html">About</a>
-        <a href="school-projects.html">School Projects</a>
-        <a href="sports.html">Sports</a>
-        <a href="piano.html">Piano</a>
-        <a href="hobbies.html">Hobbies</a>
-        <a href="book-list.html">Book List</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <div class="hero">
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Ariana Lee</a>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="school-projects.html">School Projects</a>
+      <a href="sports.html">Sports</a>
+      <a href="piano.html">Piano</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="book-list.html">Book List</a>
+    </nav>
+  </div>
+</header>
 
-      <!-- IMPROVED HERO -->
-      <h1>Hi, I’m Ariana 👋</h1>
-      <div class="subtitle">
-        Welcome to my website
-      </div>
+<main>
 
-      <p>
-        This is a place where I share my school projects, sports, piano,
-        hobbies, and things I enjoy learning.
-      </p>
+<!-- FLOATING ELEMENTS -->
+<div class="floating-bg">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
-      <p>
-        Explore the sections below to see what I’ve been working on and
-        what I enjoy doing.
-      </p>
+<div class="hero">
+  <h1>Hi, I’m Ariana 👋</h1>
 
-      <!-- IMPROVED BUTTONS -->
-      <div class="cta-row">
-        <a class="btn" href="about.html">👤 About Me</a>
-        <a class="btn" href="school-projects.html">📚 School Projects</a>
-        <a class="btn" href="sports.html">⚽ Sports</a>
-        <a class="btn" href="piano.html">🎹 Piano</a>
-        <a class="btn" href="hobbies.html">🎯 Hobbies</a>
-        <a class="btn" href="book-list.html">📖 Book List</a>
-      </div>
+  <p>
+    This is my website. Use the menu at the top to explore my projects,
+    activities, and interests.
+  </p>
 
-    </div>
-  </main>
+  <p>
+    I share my schoolwork, sports, hobbies, and more as I continue to
+    learn and grow.
+  </p>
+
+  <div class="cta-row">
+    <a class="btn" href="about.html">👤 About</a>
+    <a class="btn" href="school-projects.html">📚 School Projects</a>
+    <a class="btn" href="sports.html">⚽ Sports</a>
+    <a class="btn" href="piano.html">🎹 Piano</a>
+    <a class="btn" href="hobbies.html">🎯 Hobbies</a>
+    <a class="btn" href="book-list.html">📖 Book List</a>
+  </div>
+</div>
+
+</main>
+
 </body>
 </html>
