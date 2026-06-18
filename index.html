@@ -27,8 +27,6 @@
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-
-      min-height: 100vh;
     }
 
     .site-header {
@@ -47,14 +45,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
 
     .brand {
       text-decoration: none;
       color: #6b5ca8;
       font-weight: 700;
-      letter-spacing: 1.5px;
       font-size: 22px;
       text-transform: uppercase;
     }
@@ -62,7 +58,6 @@
     .nav {
       display: flex;
       gap: 28px;
-      flex-wrap: wrap;
     }
 
     .nav a {
@@ -70,7 +65,6 @@
       color: #7a7a7a;
       font-weight: 700;
       font-size: 14px;
-      letter-spacing: 0.8px;
       text-transform: uppercase;
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
@@ -95,42 +89,57 @@
       box-shadow:
         0 24px 48px rgba(120, 90, 200, 0.25),
         0 2px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
     }
 
+    /* IMPROVED HEADER */
     h1 {
       margin: 0 0 12px;
-      font-size: 34px;
+      font-size: 40px;
       color: #4b3c82;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 20px;
     }
 
     p {
       font-size: 16px;
       line-height: 1.6;
-      max-width: 760px;
-      margin: 0 0 14px;
+      max-width: 700px;
+      margin: 0 auto 14px;
     }
 
+    /* IMPROVED BUTTON GRID */
     .cta-row {
-      margin-top: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
     }
 
     .btn {
-      display: inline-block;
+      display: block;
       text-decoration: none;
-      background: rgba(107, 92, 168, 0.15);
+      background: white;
       color: #4b3c82;
-      border: 1px solid rgba(107, 92, 168, 0.35);
-      padding: 10px 16px;
-      border-radius: 14px;
+      border: 1px solid rgba(107, 92, 168, 0.25);
+      padding: 18px;
+      border-radius: 16px;
       font-weight: 700;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
+    /* HOVER LIFT (BIG IMPROVEMENT) */
     .btn:hover {
-      background: rgba(107, 92, 168, 0.22);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 28px rgba(0,0,0,0.18);
     }
+
   </style>
 </head>
 
@@ -142,7 +151,7 @@
         <a href="about.html">About</a>
         <a href="school-projects.html">School Projects</a>
         <a href="sports.html">Sports</a>
-        <a href="piano.html">Piano</a> <!-- ✅ NEW -->
+        <a href="piano.html">Piano</a>
         <a href="hobbies.html">Hobbies</a>
         <a href="book-list.html">Book List</a>
       </nav>
@@ -151,24 +160,33 @@
 
   <main>
     <div class="hero">
-      <h1>Welcome</h1>
+
+      <!-- IMPROVED HERO -->
+      <h1>Hi, I’m Ariana 👋</h1>
+      <div class="subtitle">
+        Welcome to my website
+      </div>
+
       <p>
-        This is my website. Use the menu at the top to explore my projects,
-        activities, and interests.
-      </p>
-      <p>
-        I share my schoolwork, sports, hobbies, and more as I continue to
-        learn and grow.
+        This is a place where I share my school projects, sports, piano,
+        hobbies, and things I enjoy learning.
       </p>
 
+      <p>
+        Explore the sections below to see what I’ve been working on and
+        what I enjoy doing.
+      </p>
+
+      <!-- IMPROVED BUTTONS -->
       <div class="cta-row">
-        <a class="btn" href="about.html">Go to About</a>
-        <a class="btn" href="school-projects.html">Go to School Projects</a>
-        <a class="btn" href="sports.html">Go to Sports</a>
-        <a class="btn" href="piano.html">Go to Piano</a> <!-- ✅ NEW -->
-        <a class="btn" href="hobbies.html">Go to Hobbies</a>
-        <a class="btn" href="book-list.html">Go to Book List</a>
+        <a class="btn" href="about.html">👤 About Me</a>
+        <a class="btn" href="school-projects.html">📚 School Projects</a>
+        <a class="btn" href="sports.html">⚽ Sports</a>
+        <a class="btn" href="piano.html">🎹 Piano</a>
+        <a class="btn" href="hobbies.html">🎯 Hobbies</a>
+        <a class="btn" href="book-list.html">📖 Book List</a>
       </div>
+
     </div>
   </main>
 </body>
