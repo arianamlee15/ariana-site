@@ -77,7 +77,7 @@
       position: relative;
     }
 
-    /* ✨ FLOATING SHAPES */
+    /* FLOATING SHAPES */
     .floating-bg span {
       position: absolute;
       width: 220px;
@@ -112,7 +112,7 @@
       100% { transform: translateY(0px); }
     }
 
-    /* ✨ SPARKLES */
+    /* BACKGROUND SPARKLES */
     .sparkles {
       position: fixed;
       width: 100%;
@@ -136,7 +136,7 @@
       100% { transform: translateY(0); opacity: 0.8; }
     }
 
-    /* 🖱️ MOUSE GLOW */
+    /* MOUSE GLOW */
     .mouse-glow {
       position: fixed;
       width: 250px;
@@ -146,6 +146,26 @@
       pointer-events: none;
       transform: translate(-50%, -50%);
       z-index: 0;
+    }
+
+    /* SPARKLE TRAIL */
+    .trail {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: #bfaeff;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 10px #bfaeff, 0 0 20px #d6c7ff;
+      animation: fadeOut 0.6s linear forwards;
+      z-index: 9999;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.5);
+      }
     }
 
     /* HERO */
@@ -218,7 +238,7 @@
   </div>
 </header>
 
-<!-- ✨ BACKGROUND ELEMENTS -->
+<!-- BACKGROUND EFFECTS -->
 <div class="floating-bg">
   <span></span>
   <span></span>
@@ -256,7 +276,7 @@
 </main>
 
 <script>
-// sparkles
+// BACKGROUND SPARKLES
 const sparkleContainer = document.querySelector(".sparkles");
 for (let i = 0; i < 25; i++) {
   const s = document.createElement("span");
@@ -266,11 +286,26 @@ for (let i = 0; i < 25; i++) {
   sparkleContainer.appendChild(s);
 }
 
-// mouse glow
+// MOUSE GLOW
 const glow = document.querySelector(".mouse-glow");
 document.addEventListener("mousemove", (e) => {
   glow.style.left = e.clientX + "px";
   glow.style.top = e.clientY + "px";
+});
+
+// ✨ SPARKLE TRAIL
+document.addEventListener("mousemove", (e) => {
+  const sparkle = document.createElement("div");
+  sparkle.className = "trail";
+
+  sparkle.style.left = e.clientX + "px";
+  sparkle.style.top = e.clientY + "px";
+
+  document.body.appendChild(sparkle);
+
+  setTimeout(() => {
+    sparkle.remove();
+  }, 600);
 });
 </script>
 
