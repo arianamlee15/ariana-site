@@ -2,25 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>In Memory of Harvey | Ariana Lee</title>
+  <title>Ariana Lee</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
   <style>
     body {
       margin: 0;
       font-family: "Segoe UI", Arial, Helvetica, sans-serif;
       color: #2e2e2e;
+
       background:
-        radial-gradient(circle at top left, rgba(190,160,255,0.2), white 50%),
-        radial-gradient(circle at bottom right, rgba(160,120,255,0.2), white 50%);
+        linear-gradient(
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0.75)
+        ),
+        url("fun-background.png");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
     }
 
-    /* HEADER */
+    /* ✅ MATCHED HEADER */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
@@ -66,228 +79,118 @@
       border-bottom-color: #bfaeff;
     }
 
+    /* Optional: highlight home */
     .nav a.active {
       color: #4b3c82;
       border-bottom-color: #6b5ca8;
     }
 
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 64px 24px;
+      padding: 64px 32px;
+      position: relative;
+    }
+
+    /* HERO */
+    .hero {
       position: relative;
       z-index: 1;
+
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 56px;
+      box-shadow:
+        0 24px 48px rgba(120, 90, 200, 0.25),
+        0 2px 6px rgba(0, 0, 0, 0.05);
+
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
+      font-size: 38px;
       color: #4b3c82;
-      margin-bottom: 10px;
-      animation: fadeIn 1s ease;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #888;
-      margin-bottom: 40px;
-      font-style: italic;
-      animation: fadeIn 1.5s ease;
-    }
-
-    /* LAYOUT */
-    .profile-row {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-      margin-bottom: 40px;
-      animation: fadeIn 2s ease;
-    }
-
-    .photo-section img {
-      width: 240px;
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-
-    .profile-card {
-      flex: 1;
-      background: white;
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
-
-    .profile-title {
-      font-weight: 700;
-      color: #5a4bb0;
-      margin-bottom: 10px;
     }
 
     p {
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 14px;
       line-height: 1.6;
-      margin-bottom: 10px;
     }
 
-    .section-title {
-      text-align: center;
-      margin: 20px 0;
-      color: #5a4bb0;
-      font-weight: 700;
-      animation: fadeIn 2.5s ease;
-    }
-
-    .video-grid {
+    .cta-row {
+      margin-top: 30px;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      animation: fadeIn 3s ease;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
     }
 
-    .video-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
+    .btn {
+      background: white;
+      padding: 18px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: #4b3c82;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      transition: 0.2s;
     }
 
-    .video-container iframe {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 12px;
+    .btn:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 28px rgba(0,0,0,0.18);
     }
 
-    /* FADE IN */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* MOUSE GLOW */
-    .mouse-glow {
-      position: fixed;
-      width: 250px;
-      height: 250px;
-      background: radial-gradient(circle, rgba(191,174,255,0.35), transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-    }
-
-    /* SPARKLE TRAIL */
-    .trail {
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      background: #bfaeff;
-      border-radius: 50%;
-      pointer-events: none;
-      box-shadow: 0 0 10px #bfaeff, 0 0 20px #d6c7ff;
-      animation: fadeOut 0.6s linear forwards;
-      z-index: 9999;
-    }
-
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        transform: scale(0.5);
-      }
-    }
-
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .profile-row {
-        flex-direction: column-reverse;
-        text-align: center;
-      }
-
-      .video-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-      }
-    }
   </style>
 </head>
 
 <body>
 
-<!-- GLOW -->
-<div class="mouse-glow"></div>
-
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="brand">Ariana Lee</a>
     <nav class="nav">
+     
       <a href="about.html">About</a>
-      <a href="school-projects.html">School Projects</a>
+      <a href="school-projects.html">School</a>
       <a href="sports.html">Sports</a>
       <a href="piano.html">Piano</a>
       <a href="hobbies.html">Hobbies</a>
       <a href="book-list.html">Book List</a>
-      <a class="active" href="harvey.html">Harvey</a>
+      <a href="harvey.html">Harvey</a>
     </nav>
   </div>
 </header>
 
 <main>
 
-<h1>In Memory of Harvey</h1>
-<div class="subtitle">Forever Loved</div>
+<div class="hero">
+  <h1>Hi, I’m Ariana 👋</h1>
 
-<div class="profile-row">
+  <p>
+    This is my website. Use the menu at the top to explore my projects,
+    activities, and interests.
+  </p>
 
-  <div class="photo-section">
-    <img src="about-photo.jpg" alt="Harvey">
-  </div>
+  <p>
+    I share my schoolwork, sports, hobbies, and more as I continue to
+    learn and grow.
+  </p>
 
-  <div class="profile-card">
-    <div class="profile-title">Pet Profile</div>
-    <p><strong>Name:</strong> Harvey</p>
-    <p><strong>Type of Dog:</strong> Yorkshire Terrier</p>
-    <p><strong>Favorite Things:</strong> Greenies, walks, food, staring at you while you eat, sleeping, belly rubs, barking, cuddles, chasing squirrels</p>
-    <p><strong>Dislikes:</strong> Squirrels, dog food, heat, haircuts, baths, vacuums</p>
-    <p><strong>Personality:</strong> Cute, loud, loving, protective, fast, caring, lovable, and the best dog ever</p>
-  </div>
-
-</div>
-
-<div class="section-title">Videos</div>
-
-<div class="video-grid">
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
-  </div>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+  <div class="cta-row">
+    <a class="btn" href="about.html">👤 About</a>
+    <a class="btn" href="school-projects.html">📚 School Projects</a>
+    <a class="btn" href="sports.html">⚽ Sports</a>
+    <a class="btn" href="piano.html">🎹 Piano</a>
+    <a class="btn" href="hobbies.html">🎯 Hobbies</a>
+    <a class="btn" href="book-list.html">📖 Book List</a>
+    <a class="btn" href="harvey.html">🐶 Harvey</a>
   </div>
 </div>
 
 </main>
-
-<script>
-const glow = document.querySelector(".mouse-glow");
-
-document.addEventListener("mousemove", (e) => {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-
-  const sparkle = document.createElement("div");
-  sparkle.className = "trail";
-
-  sparkle.style.left = e.clientX + "px";
-  sparkle.style.top = e.clientY + "px";
-
-  document.body.appendChild(sparkle);
-
-  setTimeout(() => sparkle.remove(), 600);
-});
-</script>
 
 </body>
 </html>
