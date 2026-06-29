@@ -20,6 +20,7 @@
       min-height: 100vh;
     }
 
+    /* ✅ FIXED HEADER */
     .site-header {
       position: sticky;
       top: 0;
@@ -36,6 +37,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
 
     .brand {
@@ -50,6 +52,7 @@
     .nav {
       display: flex;
       gap: 28px;
+      flex-wrap: wrap;
     }
 
     .nav a {
@@ -57,6 +60,7 @@
       color: #7a7a7a;
       font-weight: 700;
       font-size: 14px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
@@ -64,6 +68,7 @@
 
     .nav a:hover {
       color: #6b5ca8;
+      border-bottom-color: #bfaeff;
     }
 
     .nav a.active {
@@ -111,8 +116,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       font-size: 14px;
       min-width: 180px;
-
-      /* Hover lift */
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -130,80 +133,84 @@
     @media (max-width: 768px) {
       .card { padding: 32px; }
       .book-list { flex-direction: column; }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="brand">Ariana Lee</a>
-      <nav class="nav">
-        <a href="about.html">About</a>
-        <a href="school-projects.html">School Projects</a>
-        <a href="sports.html">Sports</a>
-        <a href="piano.html">Piano</a>
-        <a href="hobbies.html">Hobbies</a>
-        <a class="active" href="book-list.html">Book List</a>
-        <a href="harvey.html">Harvey</a>
-      </nav>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">Ariana Lee</a>
+    <nav class="nav">
+      <a href="about.html">About</a>
+      <a href="school-projects.html">School Projects</a>
+      <a href="sports.html">Sports</a>
+      <a href="piano.html">Piano</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a class="active" href="book-list.html">Book List</a>
+      <a href="harvey.html">Harvey</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="card">
+    <h1>Book List</h1>
+
+    <h2>Roald Dahl</h2>
+    <div class="book-list">
+      <div class="book">Matilda<div class="rating">★★★★★</div></div>
+      <div class="book">The Twits<div class="rating">★★★★☆</div></div>
+      <div class="book">The BFG<div class="rating">★★★★★</div></div>
+      <div class="book">The Magic Finger<div class="rating">★★★☆☆</div></div>
+      <div class="book">Fantastic Mr. Fox<div class="rating">★★★★★</div></div>
     </div>
-  </header>
 
-  <main>
-    <div class="card">
-      <h1>Book List</h1>
-
-      <!-- Roald Dahl -->
-      <h2>Roald Dahl</h2>
-      <div class="book-list">
-        <div class="book">Matilda<div class="rating">★★★★★</div></div>
-        <div class="book">The Twits<div class="rating">★★★★☆</div></div>
-        <div class="book">The BFG<div class="rating">★★★★★</div></div>
-        <div class="book">The Magic Finger<div class="rating">★★★☆☆</div></div>
-        <div class="book">Fantastic Mr. Fox<div class="rating">★★★★★</div></div>
-      </div>
-
-      <!-- Other Books -->
-      <h2>Other Books</h2>
-      <div class="book-list">
-        <div class="book">Amari<div class="rating">★★★★☆</div></div>
-        <div class="book">Rules<div class="rating">★★★☆☆</div></div>
-        <div class="book">Class Dismissed<div class="rating">★★★★★</div></div>
-        <div class="book">City of Spies<div class="rating">★★★★★</div></div>
-        <div class="book">City of Spies 2<div class="rating">★★★★★</div></div>
-        <div class="book">Terrible Two<div class="rating">★★★★★</div></div>
-        <div class="book">Lucky Strike<div class="rating">★★★☆☆</div></div>
-        <div class="book">3rd Grade Angels<div class="rating">★★★☆☆</div></div>
-        <div class="book">4th Grade Rats<div class="rating">★★★★☆</div></div>
-        <div class="book">Front Desk<div class="rating">★★★★★</div></div>
-        <div class="book">Homework Machine<div class="rating">★★★★★</div></div>
-      </div>
-
-      <!-- Harry Potter -->
-      <h2>Harry Potter</h2>
-      <div class="book-list">
-        <div class="book">Sorcerer’s Stone<div class="rating">★★★★★</div></div>
-        <div class="book">Chamber of Secrets<div class="rating">★★★★☆</div></div>
-        <div class="book">Prisoner of Azkaban<div class="rating">★★★★★</div></div>
-      </div>
-
-      <!-- Nancy Drew -->
-      <h2>Nancy Drew</h2>
-      <div class="book-list">
-        <div class="book">The Secret of the Old Clock<div class="rating">★★★★☆</div></div>
-        <div class="book">The Hidden Staircase<div class="rating">★★★★★</div></div>
-        <div class="book">The Bungalow Mystery<div class="rating">★★★★☆</div></div>
-        <div class="book">The Mystery at Lilac Inn<div class="rating">★★★★★</div></div>
-        <div class="book">The Secret at Shadow Ranch<div class="rating">★★★★★</div></div>
-        <div class="book">The Secret of Red Gate Farm<div class="rating">★★★★★</div></div>
-        <div class="book">The Clue in the Diary<div class="rating">★★★★☆</div></div>
-        <div class="book">Nancy’s Mysterious Letter<div class="rating">★★★☆☆</div></div>
-        <div class="book">The Sign of the Twisted Candles<div class="rating">★★★★☆</div></div>
-        <div class="book">The Password to Larkspur Lane<div class="rating">★★★★★</div></div>
-      </div>
-
+    <h2>Other Books</h2>
+    <div class="book-list">
+      <div class="book">Amari<div class="rating">★★★★☆</div></div>
+      <div class="book">Rules<div class="rating">★★★☆☆</div></div>
+      <div class="book">Class Dismissed<div class="rating">★★★★★</div></div>
+      <div class="book">City of Spies<div class="rating">★★★★★</div></div>
+      <div class="book">City of Spies 2<div class="rating">★★★★★</div></div>
+      <div class="book">Terrible Two<div class="rating">★★★★★</div></div>
+      <div class="book">Lucky Strike<div class="rating">★★★☆☆</div></div>
+      <div class="book">3rd Grade Angels<div class="rating">★★★☆☆</div></div>
+      <div class="book">4th Grade Rats<div class="rating">★★★★☆</div></div>
+      <div class="book">Front Desk<div class="rating">★★★★★</div></div>
+      <div class="book">Homework Machine<div class="rating">★★★★★</div></div>
     </div>
-  </main>
+
+    <h2>Harry Potter</h2>
+    <div class="book-list">
+      <div class="book">Sorcerer’s Stone<div class="rating">★★★★★</div></div>
+      <div class="book">Chamber of Secrets<div class="rating">★★★★☆</div></div>
+      <div class="book">Prisoner of Azkaban<div class="rating">★★★★★</div></div>
+    </div>
+
+    <h2>Nancy Drew</h2>
+    <div class="book-list">
+      <div class="book">The Secret of the Old Clock<div class="rating">★★★★☆</div></div>
+      <div class="book">The Hidden Staircase<div class="rating">★★★★★</div></div>
+      <div class="book">The Bungalow Mystery<div class="rating">★★★★☆</div></div>
+      <div class="book">The Mystery at Lilac Inn<div class="rating">★★★★★</div></div>
+      <div class="book">The Secret at Shadow Ranch<div class="rating">★★★★★</div></div>
+      <div class="book">The Secret of Red Gate Farm<div class="rating">★★★★★</div></div>
+      <div class="book">The Clue in the Diary<div class="rating">★★★★☆</div></div>
+      <div class="book">Nancy’s Mysterious Letter<div class="rating">★★★☆☆</div></div>
+      <div class="book">The Sign of the Twisted Candles<div class="rating">★★★★☆</div></div>
+      <div class="book">The Password to Larkspur Lane<div class="rating">★★★★★</div></div>
+    </div>
+
+  </div>
+</main>
+
 </body>
 </html>
