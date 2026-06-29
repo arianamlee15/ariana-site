@@ -15,46 +15,80 @@
         radial-gradient(circle at bottom right, rgba(160, 120, 255, 0.35), rgba(255, 255, 255, 0.9) 50%);
     }
 
+    /* ✅ FIXED HEADER */
     .site-header {
       position: sticky;
       top: 0;
+      z-index: 1000;
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .header-inner {
       max-width: 1200px;
-      margin: auto;
-      padding: 20px;
+      margin: 0 auto;
+      padding: 22px 32px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: #6b5ca8;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      font-size: 22px;
+      text-transform: uppercase;
     }
 
     .nav {
       display: flex;
-      gap: 20px;
+      gap: 28px;
+      flex-wrap: wrap;
     }
 
     .nav a {
       text-decoration: none;
       color: #7a7a7a;
       font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav a:hover {
+      color: #6b5ca8;
+      border-bottom-color: #bfaeff;
     }
 
     .nav a.active {
       color: #4b3c82;
+      border-bottom-color: #6b5ca8;
     }
 
     main {
       max-width: 1000px;
       margin: auto;
-      padding: 40px;
+      padding: 64px 32px;
     }
 
     .card {
       background: rgba(255,255,255,0.8);
       padding: 40px;
       border-radius: 20px;
+      box-shadow:
+        0 20px 40px rgba(120, 90, 200, 0.15),
+        0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      color: #4b3c82;
+      margin-bottom: 20px;
     }
 
     .video-grid {
@@ -66,6 +100,8 @@
     .video-container {
       position: relative;
       padding-bottom: 56.25%;
+      border-radius: 12px;
+      overflow: hidden;
     }
 
     .video-container iframe {
@@ -76,8 +112,18 @@
     }
 
     @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
       .video-grid {
         grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 32px;
       }
     }
   </style>
@@ -87,7 +133,7 @@
 
 <header class="site-header">
   <div class="header-inner">
-    <a href="index.html">Ariana Lee</a>
+    <a href="index.html" class="brand">Ariana Lee</a>
     <nav class="nav">
       <a href="about.html">About</a>
       <a href="school-projects.html">School Projects</a>
@@ -107,18 +153,15 @@
 
     <div class="video-grid">
 
-      <!-- ORIGINAL -->
       <div class="video-container"><iframe src="https://www.youtube.com/embed/SFkgZG4FzN4" allowfullscreen></iframe></div>
       <div class="video-container"><iframe src="https://www.youtube.com/embed/evkxhebkhYc" allowfullscreen></iframe></div>
       <div class="video-container"><iframe src="https://www.youtube.com/embed/K-l4UQN3qMQ" allowfullscreen></iframe></div>
       <div class="video-container"><iframe src="https://www.youtube.com/embed/Sp7D8NjF_KE" allowfullscreen></iframe></div>
 
-      <!-- PREVIOUS NEW -->
       <div class="video-container"><iframe src="https://www.youtube.com/embed/aeBrRYsxnaM" allowfullscreen></iframe></div>
       <div class="video-container"><iframe src="https://www.youtube.com/embed/sRBUbEciIzQ" allowfullscreen></iframe></div>
       <div class="video-container"><iframe src="https://www.youtube.com/embed/762I1-3s4bQ" allowfullscreen></iframe></div>
 
-      <!-- NEW ADDITIONS -->
       <div class="video-container"><iframe src="https://www.youtube.com/embed/ejYNjXbdVnw" allowfullscreen></iframe></div>
       <div class="video-container"><iframe src="https://www.youtube.com/embed/9MYoUbfh07U" allowfullscreen></iframe></div>
       <div class="video-container"><iframe src="https://www.youtube.com/embed/GFJRr0dZZn8" allowfullscreen></iframe></div>
