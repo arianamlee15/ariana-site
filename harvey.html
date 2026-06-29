@@ -15,7 +15,7 @@
         radial-gradient(circle at bottom right, rgba(160,120,255,0.2), white 50%);
     }
 
-    /* ✅ FIXED HEADER (MATCHES ALL PAGES) */
+    /* HEADER */
     .site-header {
       position: sticky;
       top: 0;
@@ -81,6 +81,7 @@
       text-align: center;
       color: #4b3c82;
       margin-bottom: 10px;
+      animation: fadeIn 1s ease;
     }
 
     .subtitle {
@@ -88,14 +89,31 @@
       color: #888;
       margin-bottom: 40px;
       font-style: italic;
+      animation: fadeIn 1.5s ease;
     }
 
-    /* PROFILE CARD */
+    /* LAYOUT */
+    .profile-row {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease;
+    }
+
+    /* PHOTO */
+    .photo-section img {
+      width: 240px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    /* PROFILE */
     .profile-card {
+      flex: 1;
       background: white;
       border-radius: 16px;
       padding: 24px;
-      margin-bottom: 40px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     }
 
@@ -105,23 +123,26 @@
       margin-bottom: 10px;
     }
 
-    /* PHOTO */
-    .photo-section {
+    p {
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    /* VIDEO */
+    .section-title {
       text-align: center;
-      margin-bottom: 40px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      color: #5a4bb0;
+      font-weight: 700;
+      animation: fadeIn 2.5s ease;
     }
 
-    .photo-section img {
-      width: 250px;
-      border-radius: 16px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
-
-    /* VIDEOS */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+      animation: fadeIn 3s ease;
     }
 
     .video-container {
@@ -138,7 +159,25 @@
       border-radius: 12px;
     }
 
+    /* FADE IN */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
     @media (max-width: 768px) {
+      .profile-row {
+        flex-direction: column-reverse; /* KEY BEHAVIOR */
+        text-align: center;
+      }
+
       .video-grid {
         grid-template-columns: 1fr;
       }
@@ -149,6 +188,7 @@
         gap: 16px;
       }
     }
+
   </style>
 </head>
 
@@ -174,20 +214,26 @@
 <h1>In Memory of Harvey</h1>
 <div class="subtitle">Forever Loved</div>
 
-<div class="profile-card">
-  <div class="profile-title">Pet Profile</div>
-  <p><strong>Name:</strong> Harvey</p>
-  <p><strong>Type of Dog:</strong> Yorkshire Terrier</p>
-  <p><strong>Favorite Things:</strong> Greenies, walks, food, staring at you while you eat, sleeping, belly rubs, barking at people, cuddles, and chasing squirrels</p>
-  <p><strong>Dislikes:</strong> Squirrels, dog food, heat, haircuts, baths, and vacuums</p>
-  <p><strong>Personality:</strong> Cute, loud, loving, protective, fast, caring, lovable, and the best dog ever</p>
+<div class="profile-row">
+
+  <!-- PHOTO -->
+  <div class="photo-section">
+    <img src="about-photo.jpg" alt="Harvey">
+  </div>
+
+  <!-- PROFILE -->
+  <div class="profile-card">
+    <div class="profile-title">Pet Profile</div>
+    <p><strong>Name:</strong> Harvey</p>
+    <p><strong>Type of Dog:</strong> Yorkshire Terrier</p>
+    <p><strong>Favorite Things:</strong> Greenies, walks, food, staring at you while you eat, sleeping, belly rubs, barking at people, cuddles, and chasing squirrels</p>
+    <p><strong>Dislikes:</strong> Squirrels, dog food, heat, haircuts, baths, and vacuums</p>
+    <p><strong>Personality:</strong> Cute, loud, loving, protective, fast, caring, lovable, and the best dog ever</p>
+  </div>
+
 </div>
 
-<div class="photo-section">
-  <img src="about-photo.jpg" alt="Harvey">
-</div>
-
-<div class="profile-title">Videos</div>
+<div class="section-title">Videos</div>
 
 <div class="video-grid">
   <div class="video-container">
