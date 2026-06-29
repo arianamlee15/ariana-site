@@ -15,41 +15,60 @@
         radial-gradient(circle at bottom right, rgba(160, 120, 255, 0.35), rgba(255, 255, 255, 0.9) 50%);
     }
 
+    /* ✅ FIXED HEADER (MATCHES ABOUT PAGE) */
     .site-header {
       position: sticky;
       top: 0;
+      z-index: 1000;
       background: rgba(255,255,255,0.85);
       backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .header-inner {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       padding: 22px 32px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
 
     .brand {
+      text-decoration: none;
       color: #6b5ca8;
       font-weight: 700;
-      text-decoration: none;
+      letter-spacing: 1.5px;
+      font-size: 22px;
+      text-transform: uppercase;
     }
 
     .nav {
       display: flex;
       gap: 28px;
+      flex-wrap: wrap;
     }
 
     .nav a {
       text-decoration: none;
       color: #7a7a7a;
       font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav a:hover {
+      color: #6b5ca8;
+      border-bottom-color: #bfaeff;
     }
 
     .nav a.active {
       color: #4b3c82;
-      border-bottom: 2px solid #6b5ca8;
+      border-bottom-color: #6b5ca8;
     }
 
     main {
@@ -82,7 +101,7 @@
       line-height: 1.6;
     }
 
-    /* NEW: Stats */
+    /* STATS */
     .stats {
       display: flex;
       justify-content: center;
@@ -109,7 +128,7 @@
       color: #5a4bb0;
     }
 
-    /* Expandable sections */
+    /* EXPANDABLE */
     .expand-card {
       background: white;
       border-radius: 16px;
@@ -143,6 +162,18 @@
     .expand-card.active .expand-details {
       max-height: 200px;
     }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .card {
+        padding: 32px;
+      }
+    }
   </style>
 </head>
 
@@ -172,7 +203,6 @@
   I have been playing travel soccer for two years now, and it is one of my favorite sports. I enjoy practicing, playing in games, and getting better with my team. Besides soccer, I also like playing other sports with my family such as pickleball, softball, basketball, and tennis. I also enjoy riding my bike and my electric scooter, which is really fun. In the summer, I love to go swimming and spend time in the water.
 </p>
 
-<!-- NEW: STATS -->
 <div class="stats">
   <div class="stat-box">
     <div class="stat-title">Sport</div>
@@ -192,8 +222,6 @@
 <p>
   I play wing in soccer, which means I help move the ball down the field and create scoring chances for my team. One of my favorite moments was when I scored four goals in one game.
 </p>
-
-<!-- NEW: EXPANDABLE SECTIONS -->
 
 <div class="expand-card" onclick="toggle(this)">
   <div class="expand-title">⚽ Training <span>+</span></div>
