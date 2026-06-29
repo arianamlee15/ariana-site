@@ -15,41 +15,60 @@
         radial-gradient(circle at bottom right, rgba(160,120,255,0.2), white 50%);
     }
 
+    /* ✅ FIXED HEADER (MATCHES ALL PAGES) */
     .site-header {
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.9);
+      z-index: 1000;
+      background: rgba(255,255,255,0.85);
       backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     .header-inner {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       padding: 22px 32px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
 
     .brand {
       text-decoration: none;
       color: #6b5ca8;
       font-weight: 700;
+      letter-spacing: 1.5px;
+      font-size: 22px;
+      text-transform: uppercase;
     }
 
     .nav {
       display: flex;
       gap: 28px;
+      flex-wrap: wrap;
     }
 
     .nav a {
       text-decoration: none;
       color: #7a7a7a;
       font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav a:hover {
+      color: #6b5ca8;
+      border-bottom-color: #bfaeff;
     }
 
     .nav a.active {
       color: #4b3c82;
-      border-bottom: 2px solid #6b5ca8;
+      border-bottom-color: #6b5ca8;
     }
 
     main {
@@ -86,7 +105,7 @@
       margin-bottom: 10px;
     }
 
-    /* PHOTO SECTION */
+    /* PHOTO */
     .photo-section {
       text-align: center;
       margin-bottom: 40px;
@@ -98,7 +117,7 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
-    /* VIDEO GRID */
+    /* VIDEOS */
     .video-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -123,6 +142,12 @@
       .video-grid {
         grid-template-columns: 1fr;
       }
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
     }
   </style>
 </head>
@@ -146,37 +171,31 @@
 
 <main>
 
-<h1>In Memory of Harvey </h1>
+<h1>In Memory of Harvey</h1>
 <div class="subtitle">Forever Loved</div>
 
-<!-- PET PROFILE -->
 <div class="profile-card">
   <div class="profile-title">Pet Profile</div>
   <p><strong>Name:</strong> Harvey</p>
-  <p><strong>Type of Dog:</strong> Yorkshire Terrier </p>
+  <p><strong>Type of Dog:</strong> Yorkshire Terrier</p>
   <p><strong>Favorite Things:</strong> Greenies, walks, food, staring at you while you eat, sleeping, belly rubs, barking at people, cuddles, and chasing squirrels</p>
   <p><strong>Dislikes:</strong> Squirrels, dog food, heat, haircuts, baths, and vacuums</p>
-  <p><strong>Personality:</strong> Cute, loud, loving, protective fast, caring, lovable, and the best dog ever </p>
+  <p><strong>Personality:</strong> Cute, loud, loving, protective, fast, caring, lovable, and the best dog ever</p>
 </div>
 
-<!-- PHOTO -->
 <div class="photo-section">
   <img src="about-photo.jpg" alt="Harvey">
 </div>
 
-<!-- VIDEOS -->
 <div class="profile-title">Videos</div>
 
 <div class="video-grid">
-
   <div class="video-container">
     <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
   </div>
-
   <div class="video-container">
     <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
   </div>
-
 </div>
 
 </main>
