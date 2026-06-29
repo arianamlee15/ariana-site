@@ -28,7 +28,7 @@
       background-attachment: fixed;
     }
 
-    /* ✅ MATCHED HEADER */
+    /* HEADER */
     .site-header {
       position: sticky;
       top: 0;
@@ -79,24 +79,16 @@
       border-bottom-color: #bfaeff;
     }
 
-    /* Optional: highlight home */
-    .nav a.active {
-      color: #4b3c82;
-      border-bottom-color: #6b5ca8;
-    }
-
     main {
       max-width: 1000px;
       margin: auto;
       padding: 64px 32px;
       position: relative;
+      z-index: 1;
     }
 
     /* HERO */
     .hero {
-      position: relative;
-      z-index: 1;
-
       background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(8px);
       border-radius: 20px;
@@ -143,16 +135,58 @@
       box-shadow: 0 16px 28px rgba(0,0,0,0.18);
     }
 
+    /* ✨ MOUSE GLOW */
+    .mouse-glow {
+      position: fixed;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(191,174,255,0.35), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    /* ✨ SPARKLE TRAIL */
+    .trail {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      background: #bfaeff;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 10px #bfaeff, 0 0 20px #d6c7ff;
+      animation: fadeOut 0.6s linear forwards;
+      z-index: 9999;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
+<!-- ✨ GLOW ELEMENT -->
+<div class="mouse-glow"></div>
+
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="brand">Ariana Lee</a>
     <nav class="nav">
-     
       <a href="about.html">About</a>
       <a href="school-projects.html">School</a>
       <a href="sports.html">Sports</a>
@@ -191,6 +225,26 @@
 </div>
 
 </main>
+
+<!-- ✨ SCRIPT -->
+<script>
+const glow = document.querySelector(".mouse-glow");
+
+document.addEventListener("mousemove", (e) => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+
+  const sparkle = document.createElement("div");
+  sparkle.className = "trail";
+
+  sparkle.style.left = e.clientX + "px";
+  sparkle.style.top = e.clientY + "px";
+
+  document.body.appendChild(sparkle);
+
+  setTimeout(() => sparkle.remove(), 600);
+});
+</script>
 
 </body>
 </html>
