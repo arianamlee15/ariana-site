@@ -145,13 +145,13 @@
       text-align: center;
       padding: 22px;
       box-sizing: border-box;
-      box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
       transition: 0.2s;
     }
 
     .book-bubble:hover {
       transform: translateY(-6px) scale(1.03);
-      box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+      box-shadow: 0 18px 30px rgba(0, 0, 0, 0.18);
     }
 
     .book-bubble h2 {
@@ -187,7 +187,11 @@
       position: fixed;
       width: 250px;
       height: 250px;
-      background: radial-gradient(circle, rgba(191,174,255,0.35), transparent 70%);
+      background: radial-gradient(
+        circle,
+        rgba(191, 174, 255, 0.35),
+        transparent 70%
+      );
       border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
@@ -252,257 +256,266 @@
 
 <body>
 
-<div class="mouse-glow"></div>
+  <div class="mouse-glow"></div>
 
-<header class="site-header">
-  <div class="header-inner">
-    <a href="index.html" class="brand">Ariana Lee</a>
-    <nav class="nav">
-      <a href="about.html">About</a>
-      <a href="school-projects.html">School</a>
-      <a href="sports.html">Sports</a>
-      <a href="piano.html">Piano</a>
-      <a href="hobbies.html">Hobbies</a>
-      <a href="book-list.html" class="active">Book List</a>
-      <a href="harvey.html">Harvey</a>
-    </nav>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand">Ariana Lee</a>
 
-<main>
-  <div class="page-card">
-    <h1>My Book List 📖</h1>
+      <nav class="nav">
+        <a href="about.html">About</a>
+        <a href="school-projects.html">School</a>
+        <a href="sports.html">Sports</a>
+        <a href="piano.html">Piano</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="book-list.html" class="active">Book List</a>
+        <a href="harvey.html">Harvey</a>
+      </nav>
+    </div>
+  </header>
 
-    <p class="intro">
-      Here are some of the books I have read and rated. I like keeping track of
-      my books so I can remember my favorites and share recommendations.
-    </p>
+  <main>
+    <div class="page-card">
 
-    <h2 class="section-title">Favorite Books</h2>
+      <h1>My Book List 📖</h1>
 
-    <div class="book-grid">
+      <p class="intro">
+        Here are some of the books I have read and rated. I like keeping track of
+        my books so I can remember my favorites and share recommendations.
+      </p>
 
-      <div class="book-bubble">
-        <h2>Matilda</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
+      <h2 class="section-title">Favorite Books</h2>
+
+      <div class="book-grid">
+
+        <div class="book-bubble">
+          <h2>Matilda</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>The Twits</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>The BFG</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Amari</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Rules</h2>
+          <p class="stars">★★★☆☆</p>
+          <p class="rating-text">3 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Class Dismissed</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>City of Spies</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>City of Spies 2</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>The Terrible Two</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Lucky Strike</h2>
+          <p class="stars">★★★☆☆</p>
+          <p class="rating-text">3 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>3rd Grade Angels</h2>
+          <p class="stars">★★★☆☆</p>
+          <p class="rating-text">3 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>4th Grade Rats</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Front Desk</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>The Homework Machine</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Restart</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>The Wizard of Oz</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Three Keys</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Save Me a Seat</h2>
+          <p class="stars">★★★☆☆</p>
+          <p class="rating-text">3 stars</p>
+        </div>
+
+        <!-- NEW BOOK -->
+        <div class="book-bubble">
+          <h2>The Lemonade War</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
+
       </div>
 
-      <div class="book-bubble">
-        <h2>The Twits</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
+      <h2 class="section-title">Harry Potter</h2>
+
+      <div class="book-grid">
+
+        <div class="book-bubble">
+          <h2>Sorcerer’s Stone</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Chamber of Secrets</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
+
+        <div class="book-bubble">
+          <h2>Prisoner of Azkaban</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
+
       </div>
 
-      <div class="book-bubble">
-        <h2>The BFG</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+      <h2 class="section-title">Nancy Drew</h2>
 
-      <div class="book-bubble">
-        <h2>Amari</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
-      </div>
+      <div class="book-grid">
 
-      <div class="book-bubble">
-        <h2>Rules</h2>
-        <p class="stars">★★★☆☆</p>
-        <p class="rating-text">3 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Secret of the Old Clock</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>Class Dismissed</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Hidden Staircase</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>City of Spies</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Bungalow Mystery</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>City of Spies 2</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Mystery at Lilac Inn</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>The Terrible Two</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Secret at Shadow Ranch</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>Lucky Strike</h2>
-        <p class="stars">★★★☆☆</p>
-        <p class="rating-text">3 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Secret of Red Gate Farm</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>3rd Grade Angels</h2>
-        <p class="stars">★★★☆☆</p>
-        <p class="rating-text">3 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Clue in the Diary</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>4th Grade Rats</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>Nancy’s Mysterious Letter</h2>
+          <p class="stars">★★★☆☆</p>
+          <p class="rating-text">3 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>Front Desk</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Sign of the Twisted Candles</h2>
+          <p class="stars">★★★★☆</p>
+          <p class="rating-text">4 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>The Homework Machine</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+        <div class="book-bubble">
+          <h2>The Password to Larkspur Lane</h2>
+          <p class="stars">★★★★★</p>
+          <p class="rating-text">5 stars</p>
+        </div>
 
-      <div class="book-bubble">
-        <h2>Restart</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Wizard of Oz</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>Three Keys</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>Save Me a Seat</h2>
-        <p class="stars">★★★☆☆</p>
-        <p class="rating-text">3 stars</p>
       </div>
 
     </div>
+  </main>
 
-    <h2 class="section-title">Harry Potter</h2>
+  <script>
+    const glow = document.querySelector(".mouse-glow");
 
-    <div class="book-grid">
+    document.addEventListener("mousemove", (e) => {
+      glow.style.left = e.clientX + "px";
+      glow.style.top = e.clientY + "px";
 
-      <div class="book-bubble">
-        <h2>Sorcerer’s Stone</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+      const sparkle = document.createElement("div");
+      sparkle.className = "trail";
 
-      <div class="book-bubble">
-        <h2>Chamber of Secrets</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
-      </div>
+      sparkle.style.left = e.clientX + "px";
+      sparkle.style.top = e.clientY + "px";
 
-      <div class="book-bubble">
-        <h2>Prisoner of Azkaban</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
+      document.body.appendChild(sparkle);
 
-    </div>
-
-    <h2 class="section-title">Nancy Drew</h2>
-
-    <div class="book-grid">
-
-      <div class="book-bubble">
-        <h2>The Secret of the Old Clock</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Hidden Staircase</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Bungalow Mystery</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Mystery at Lilac Inn</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Secret at Shadow Ranch</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Secret of Red Gate Farm</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Clue in the Diary</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>Nancy’s Mysterious Letter</h2>
-        <p class="stars">★★★☆☆</p>
-        <p class="rating-text">3 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Sign of the Twisted Candles</h2>
-        <p class="stars">★★★★☆</p>
-        <p class="rating-text">4 stars</p>
-      </div>
-
-      <div class="book-bubble">
-        <h2>The Password to Larkspur Lane</h2>
-        <p class="stars">★★★★★</p>
-        <p class="rating-text">5 stars</p>
-      </div>
-
-    </div>
-
-  </div>
-</main>
-
-<script>
-const glow = document.querySelector(".mouse-glow");
-
-document.addEventListener("mousemove", (e) => {
-  glow.style.left = e.clientX + "px";
-  glow.style.top = e.clientY + "px";
-
-  const sparkle = document.createElement("div");
-  sparkle.className = "trail";
-
-  sparkle.style.left = e.clientX + "px";
-  sparkle.style.top = e.clientY + "px";
-
-  document.body.appendChild(sparkle);
-
-  setTimeout(() => sparkle.remove(), 600);
-});
-</script>
+      setTimeout(() => sparkle.remove(), 600);
+    });
+  </script>
 
 </body>
 </html>
