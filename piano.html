@@ -6,13 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
-      color: #2e2e2e;
-      background:
-        radial-gradient(circle at top left, rgba(190, 160, 255, 0.35), rgba(255, 255, 255, 0.9) 45%),
-        radial-gradient(circle at bottom right, rgba(160, 120, 255, 0.35), rgba(255, 255, 255, 0.9) 50%);
+    body {body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: #2e2e2e;
+
+  background-color: #f8f4ff;
+  background-image:
+    radial-gradient(circle at 10% 15%, rgba(199, 177, 255, 0.75) 0, transparent 30%),
+    radial-gradient(circle at 90% 15%, rgba(255, 194, 223, 0.65) 0, transparent 30%),
+    radial-gradient(circle at 10% 90%, rgba(169, 220, 255, 0.65) 0, transparent 32%),
+    radial-gradient(circle at 90% 85%, rgba(223, 180, 255, 0.55) 0, transparent 30%),
+    linear-gradient(135deg, #faf6ff 0%, #fff5fa 50%, #f3f8ff 100%);
+
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
     }
 
     /* ✅ FIXED HEADER */
